@@ -1,7 +1,7 @@
 # Code-Quiz
 
 ![Site Image](./images/code-quiz.png)
-[Updated Site]
+[Updated Site](https://senaygebrat.github.io/Code-Quiz/)
 
 # About Code Quiz
 
