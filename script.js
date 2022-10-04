@@ -46,9 +46,7 @@ var questionIndex = 0;
 
 // var timerId = 0;
 
-
-
-//start button only shows questions div, and time left
+//start button only shows questions div, and time left --needs to show options div as well (clickable options)
 document.getElementById("start").addEventListener("click", function(){
     document.getElementById("start-div").style.display = "none";
     document.getElementById("question-div").style.display = "block";
@@ -57,16 +55,9 @@ document.getElementById("start").addEventListener("click", function(){
     document.getElementById("time").textContent = timeLeft
     document.getElementById("question").textContent = currQuestion
     document.getElementById("options").textContent = currOptions
-
-
-
-    
-
 ;
-
     // console.log( document.getElementById("question-div"), document.getElementById("options-div") )
-    
-//timer id updates time remaining
+    //timer id updates time remaining
    var timerId = setInterval(function(){
     // = timeLeft;
     
