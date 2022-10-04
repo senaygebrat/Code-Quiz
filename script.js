@@ -1,15 +1,14 @@
 //need a generate.btn add.eventListener("click, start game~~push to start") to start the quiz
 document.getElementById("question-div").style.display = "none";
-document.getElementById("initials-div").style.display = "none";
-// var timerId;
-var timeLeft = 3;
+// document.getElementById("initials-div").style.display = "none";
+var timerId;
+var timeLeft = 60;
 // var choices = Array.from(document.getElementsByClassName("answer"));
 var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answer-container");
 var timeEl = document.getElementById("time"); //do i need this here?
 
-//create an array of questions with question, an array of objects and right answer values
-
+//array of objects containing properties
 var questions = [
     {
         question: "Strings must be surrounded by what?",
@@ -44,45 +43,83 @@ var questions = [
 ]
 
 var questionIndex = 0;
-var timerId = 0;
+
+// var timerId = 0;
 
 
+
+//start button only shows questions div, and time left
 document.getElementById("start").addEventListener("click", function(){
     document.getElementById("start-div").style.display = "none";
     document.getElementById("question-div").style.display = "block";
-    document.getElementById("initials-div").style.display = "block";
+    // document.getElementById("initials-div").style.display = "none";
+    document.getElementById("options-div").style.display = "block";
+    document.getElementById("time").textContent = timeLeft
+    document.getElementById("question").textContent = currQuestion
+    document.getElementById("options").textContent = currOptions
+
+
+
     
 
-    var showQuestion = question[questionIndex].question;
-    function nextQuestion(){
-        
-    }
+;
 
-
+    // console.log( document.getElementById("question-div"), document.getElementById("options-div") )
+    
+//timer id updates time remaining
    var timerId = setInterval(function(){
-    document.getElementById("time").textContent = timeLeft;
-
+    // = timeLeft;
+    
         if(timeLeft === 0)
         {
             clearInterval(timerId)
             alert("Time's up!")
             // displayMessage()
             //clear timer
-            document.getElementById("initials-div").style.display = "block";
+            // document.getElementById("initials-div").style.display = "block";
 
-            //hide questions div and show initials div
         }
         else{
-            document.getElementById("time").textContent = timeLeft;
+            document.getElementById("question-div").textContent = currQuestion
+            // document.getElementById("question").textContent = questions[questionIndex].question
+            // document.getElementById("options").textContent = questions[questionIndex].options
             timeLeft--;
+            // document.getElementById("time") 
+            document.getElementById("time").textContent = timeLeft;
         }
+        console.log(document.getElementById("time"),  timeLeft )
     }, 1000)
-})
-    clearInterval();
-    // }
-    
 
-    // })
+    console.log(timeLeft)
+
+// go to next question when needed -- begin at first object [0]
+
+var currQuestion = questions[questionIndex].question;
+
+var currOptions = questions[questionIndex].options;
+
+console.log(currQuestion, currOptions)
+
+     function questionArray(){
+        // var currQuestion = questions[questionIndex].question;
+
+            // var firstQuestion = questions[questionArray];
+            // questionEl.textContent = firstQuestion.question;
+            // var options = firstQuestion.options;
+            // answerEl.textContent = options;
+        }
+        questionArray();
+
+})
+
+    // function that renders/shows the current question we are on
+    // function show() {
+    // document.getElementById("question-div").textContent = ""
+    // document.getElementById("options").textContent = ""
+
+
+    // }
+    // }
 
 // document.getElementById("start").addEventListener("click", function(){
 //     document.getElementById("start-div").style.display = "none";
@@ -104,21 +141,21 @@ document.getElementById("start").addEventListener("click", function(){
 //     }, 1000)
 // })
 
-var score = 0;
+// var score = 0;
 
-function questionArray(){
-    var firstQuestion = questions[questionArray];
-    questionEl.textContent = firstQuestion.question;
-    var options = firstQuestion.options;
-    answerEl.textContent = options;
-}
-questionArray();
-
-
+// function questionArray(){
+//     var firstQuestion = questions[questionArray];
+//     questionEl.textContent = firstQuestion.question;
+//     var options = firstQuestion.options;
+//     answerEl.textContent = options;
+// }
+// questionArray();
 
 
 
-var wrongAnswer = 10;
+
+
+// var wrongAnswer = 10;
 // function getNewQuestion(){
 //     if
 
