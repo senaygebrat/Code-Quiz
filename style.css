@@ -1,0 +1,51 @@
+#time {
+    color: red;
+    font-size: 72px;
+}
+
+#timer {
+    color: black;
+}
+
+p {
+    text-align: center;
+    color: blue;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+#timer {
+    font-size: 48px;
+}
+
+/* #btn, #start {
+    text-align: center;
+} */
+
+#question-div {
+    text-align: center;
+    font-size: 22px; 
+}
+
+#start-div {
+    text-align: center;
+}
+
+#btn {
+    text-align: center;
+}
+
+
+/* // function setTime() {
+    //     var timerId = setInterval (function(){
+    //         timeLeft--;
+    //         timeEl.textContent = timerId + "seconds left!!!"
+
+    //     if(timeLeft === 0) {
+    //         clearInterval(timerId);
+    //     }
+    //     }
+    // } */
